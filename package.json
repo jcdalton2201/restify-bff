@@ -1,0 +1,72 @@
+{
+  "name": "restify-bff",
+  "version": "1.0.0",
+  "description": "a template for restify API",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jcdalton2201/restify-bff.git"
+  },
+  "author": "Jason Dalton",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jcdalton2201/restify-bff/issues"
+  },
+  "type": "module",
+  "scripts": {
+    "start": "node app/server.js",
+    "start-prod": "env ENV=prod node app/server.js",
+    "debug": "node --inspect app/server.js",
+    "docker-build": "node scripts/dockerBuild",
+    "docker-start": "node scripts/dockerStart",
+    "sonar": "node scripts/sonar.js",
+    "test": "c8 --reporter=lcov --reporter=text mocha ./test/unit/log.spec.js ",
+    "functional": "c8 --reporter=lcov --reporter=text mocha ./test/functional/**/*.spec.js ",
+    "lint": "eslint app/**/*.js --fix",
+    "new-route": "node scripts/new-route.js"
+  },
+  "homepage": "https://github.com/jcdalton2201/restify-bff#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "chalk": "^5.0.1",
+    "cookie-session": "^2.0.0",
+    "esm": "^3.2.25",
+    "log4js": "^6.3.0",
+    "node-fetch": "^3.2.8",
+    "node-vault": "^0.9.21",
+    "passport-google-oauth": "^2.0.0",
+    "passport-openidconnect": "^0.1.1",
+    "passport-restify": "^1.0.1",
+    "pg": "^8.5.1",
+    "replacestream": "^4.0.3",
+    "restify": "^8.5.1",
+    "restify-cookies": "^0.2.6",
+    "restify-session": "^1.1.1",
+    "restify-validator": "^0.3.1"
+  },
+  "devDependencies": {
+    "babel-plugin-istanbul": "^6.0.0",
+    "c8": "^7.7.1",
+    "chai": "^4.3.4",
+    "chai-http": "^4.3.0",
+    "docker-cmd-js": "^4.1.0",
+    "eslint": "^8.19.0",
+    "eslint-config-prettier": "^8.1.0",
+    "eslint-plugin-jasmine": "^4.1.2",
+    "eslint-plugin-prettier": "^4.2.1",
+    "jasmine": "^4.2.1",
+    "jasmine-spec-reporter": "^7.0.0",
+    "jwt-decode": "^3.1.2",
+    "mocha": "^10.0.0",
+    "nyc": "^15.1.0",
+    "prettier": "^2.2.1",
+    "sinon": "^14.0.0",
+    "supertest": "^6.1.3"
+  },
+  "c8": {
+    "exclude": [
+      "app/routes/auth/*.js",
+      "app/services/sso-service.js"
+    ]
+  }
+}

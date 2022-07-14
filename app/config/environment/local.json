@@ -1,0 +1,15 @@
+{
+    "secret_names": {
+        "okta": {
+            "clientId":"",
+            "domain":"",
+            "issuer":"",
+            "redirect":"",
+            "clientSecret":"",
+            "appBaseUrl":"",
+            "tokenURL":"",
+            "userInfoURL":"",
+            "authorizationURL":""
+        }
+    }
+}
